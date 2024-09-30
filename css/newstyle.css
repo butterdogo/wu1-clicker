@@ -1,0 +1,23 @@
+.container {
+
+    display: flex;
+
+}
+
+.stats {
+
+    background-color: red;
+    
+}
+
+.main {
+
+    background-color: green;
+
+}
+
+.upgrade {
+
+    background-color: blue;
+   
+}

@@ -23,9 +23,9 @@ const audioAchievement = document.querySelector('#swoosh');
  * värden, utan då använder vi let.
  * Läs mer: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let
  */
-let money = 0;
+let money = 1;
 let moneyPerClick = 1;
-let moneyPerSecond = 0;
+let moneyPerSecond = 1;
 let acquiredUpgrades = 0;
 let last = 0;
 let numberOfClicks = 0; // hur många gånger har spelare eg. klickat
