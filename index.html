@@ -11,31 +11,53 @@
 </head>
 
 <body>
-
+    <audio id="audioclick" src="/audio/butterdog-effect.mp3"></audio>
+    <audio id="whatthedogdoin" src="audio/yt1s_wU4BGgD.mp3"></audio>
     <div class="container">
 
 
         <div class="stats">
-
+            <ul class="game-currency">
+                
+                <li class="item">
+                    <h3>Butterdog per klick: <span id="mpc"></span></h3>
+                </li>
+                <li class="item">
+                    <h3>Butterdog per sekund: <span id="mps"></span></h3>
+                </li>
+                <li class="item">
+                    <h3>Uppgraderingar: <span id="upgrades"></span></h3>
+                </li>
+                <li class="item">
+                    <h3>Totala klick: <span id="totalclicks"></span></h3>
+                </li>
+            </ul>
 
         </div>
 
         <div class="main">
 
-            <img src="img/butterdog-button.jpg" alt="button">
+            <h1>Butterdog<br> <span id="money"></span></h1>
+
+            <div class="game-controls">
+                <button id="game-button"></button>
+            </div>
 
         </div>
 
         <div class="upgrade">
 
-            <li>Butter</li>
+            <div>
+                <h2>Uppgraderingar</h2>
+                <div id="upgradelist"></div>
+            </div>
 
         </div>
 
 
     </div>
-
-
+    <div id="msgbox"></div> 
+    <script src="js/clicker.js"></script>
 
 </body>
 
@@ -48,7 +70,7 @@
             <div class="game-hud">
                 <ul class="game-currency">
                     <li class="item">
-                        <h3>Benbitar: <span id="money"></span></h3>
+                        x
                     </li>
                     <li class="item">
                         <h3>Benbitar per klick: <span id="mpc"></span></h3>
