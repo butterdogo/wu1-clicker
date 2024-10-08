@@ -11,13 +11,14 @@ const clickerButton = document.querySelector('#game-button');
 const moneyTracker = document.querySelector('#money');
 const mpsTracker = document.querySelector('#mps'); // money per second
 const mpcTracker = document.querySelector('#mpc'); // money per click
-//const tcTracker = document.querySelector('#tc');
 const upgradesTracker = document.querySelector('#upgrades');
 const upgradeList = document.querySelector('#upgradelist');
 const msgbox = document.querySelector('#msgbox');
 const audioAchievement = document.querySelector('#whatthedogdoin');
 const audioclick = document.querySelector('#audioclick');
 
+// <h3>Totala klick: <span id="totalclicks"></span></h3>
+const clicksTracker = document.querySelector('#totalclicks');
 
 /* Följande variabler använder vi för att hålla reda på hur mycket pengar som
  * spelaren, har och tjänar.
@@ -41,12 +42,12 @@ let totalclicks = 0;
 
 let achievements = [
     {
-        description: 'Museet är redo att öppna, grattis! ',
+        description: 'Du har smörat din första hund! ',
         requiredUpgrades: 1,
         acquired: false,
     },
     {
-        description: 'Nu börjar det likna något, fortsätt gräva!',
+        description: 'Nu börjar det likna något, fortsätt klicka!',
         requiredUpgrades: 10,
         acquired: false,
     },
@@ -82,6 +83,7 @@ clickerButton.addEventListener(
         // console.log(clicker.score);
         audioclick.play();
         totalclicks += 1;
+        //                     <h3>Totala klick: <span id="totalclicks"></span></h3>
         console.log(totalclicks)
     },
     false
@@ -100,8 +102,8 @@ function step(timestamp) {
     moneyTracker.textContent = Math.round(money);
     mpsTracker.textContent = moneyPerSecond;
     mpcTracker.textContent = moneyPerClick;
-    //tcTracker.textContent = totalclicks;
     upgradesTracker.textContent = acquiredUpgrades;
+    clicksTracker.textContent = totalclicks;
 
     if (timestamp >= last + 1000) {
         money += moneyPerSecond;
@@ -178,7 +180,7 @@ upgrades = [
     {
         name: 'dog with butter',
         cost: 50,
-        clicks: 2,
+        clicks: 1,
     },
     {
         name: 'butter on dog',
@@ -221,15 +223,15 @@ function createCard(upgrade) {
     } else {
         header.textContent = `${upgrade.name}, +${upgrade.clicks} per klick.`;
     }
-    cost.textContent = `Köp för ${upgrade.cost} benbitar.`;
+    cost.textContent = `Köp för ${upgrade.cost} Butterdog.`;
 
     card.addEventListener('click', (e) => {
         if (money >= upgrade.cost) {
             acquiredUpgrades++;
             money -= upgrade.cost;
-            upgrade.cost *= 1.3;
+            upgrade.cost *= 1.4;
             upgrade.cost = Math.round(upgrade.cost);
-            cost.textContent = 'Köp för ' + upgrade.cost + ' benbitar';
+            cost.textContent = 'Köp för ' + upgrade.cost + ' Butterdog';
             moneyPerSecond += upgrade.amount ? upgrade.amount : 0;
             moneyPerClick += upgrade.clicks ? upgrade.clicks : 0;
             message('Grattis du har köpt en uppgradering!', 'success');
