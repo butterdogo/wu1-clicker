@@ -21,7 +21,7 @@
 
 body {
 
-background-image: url(/img/background3.jpg);
+/*background-image: url(/img/background4.jpg);*/
 
 background-repeat:no-repeat;
 
@@ -40,8 +40,6 @@ background-size:cover;
 
     margin-top: 5rem;
 
-  
-
     width: 30rem;
 
     margin-left: auto;
@@ -54,10 +52,6 @@ background-size:cover;
 }
 
 .main {
-
-
-
-   
 
     max-width: 56rem;
 
@@ -82,8 +76,6 @@ background-size:cover;
 
     margin-top: 5rem;
 
-
-
     margin-left: auto;
 
     margin-right: auto;
@@ -102,6 +94,7 @@ background-size:cover;
     background: url('../img/butterdog-button.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat:no-repeat;
     border: 2px solid transparent;
     color: var(--color-light);
     font-weight: 700;
