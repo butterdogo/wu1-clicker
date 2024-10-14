@@ -19,6 +19,15 @@
     --space-4xl-5xl: clamp(7.88rem, calc(7.14rem + 3.7vw), 10rem);
 }
 
+body {
+
+background-image: url(/img/background3.jpg);
+
+background-repeat:no-repeat;
+
+background-size:cover;
+}
+
 
 .container {
 
@@ -31,7 +40,7 @@
 
     margin-top: 5rem;
 
-    background-color: red;
+  
 
     width: 30rem;
 
@@ -48,7 +57,7 @@
 
 
 
-    background-color: green;
+   
 
     max-width: 56rem;
 
@@ -73,7 +82,7 @@
 
     margin-top: 5rem;
 
-    background-color: rgb(0, 0, 255);
+
 
     margin-left: auto;
 
