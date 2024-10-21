@@ -1,6 +1,3 @@
-/* @link https://utopia.fyi/type/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-/* @link https://utopia.fyi/space/calculator?c=320,18,1.2,1240,20,1.333,5,2,&s=0.75|0.5|0.25,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
-
 :root {
     --color-lighter: hsl(80, 10%, 90%);
     --color-light: hsl(80, 10%, 80%);
@@ -23,147 +20,98 @@
 }
 
 body {
-    background-color: var(--color-light);
-    color: var(--color-dark);
-    font-family: sans-serif;
-    font-size: var(--step-0);
+
+    background-image: url(/img/background5.jpg);
+
+    background-repeat: no-repeat;
+
+    background-size: cover;
+
+
+
+
 }
 
-h1 {
-    font-size: var(--step-2);
-    text-transform: uppercase;
-    font-weight: 700;
-    max-width: 20ch;
-}
-
-/* göm audio, används för att preloada ljudet */
-audio {
-    display: none;
-}
 
 .container {
-    width: min(80ch, 100vw - var(--space-l-xl));
-    margin-inline: auto;
-}
 
-.footer {
-    --min: 30ch;
-
-    margin-top: auto;
-    padding: var(--space-l-xl) 0;
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
-    gap: var(--space-s-m);
-}
-.footer > * {
-    font-size: var(--step--1);
-}
-.hero {
-    display: grid;
-    grid-template-areas: 'stack';
-}
-
-.hero-gradient {
-    grid-area: stack;
-    place-self: end;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(
-        0deg,
-        var(--color-dark),
-        var(--color-dark-transparent)
-    );
-}
-
-.hero > picture {
-    place-self: center;
-    grid-area: stack;
-    width: 100%;
-    height: 100%;
-}
-
-.hero img {
-    width: 100%;
-    height: 40vh;
-    aspect-ratio: 16/9;
-    object-fit: cover;
-}
-
-.hero-content {
-    grid-area: stack;
-    place-self: end;
-    padding: var(--space-m-l) 0;
-    color: var(--color-light);
-}
-
-@media (max-width: 30rem) {
-    .lead {
-        display: none;
-    }
-    .hero > picture {
-        max-height: 15vh;
-    }
-}
-
-.game {
-    margin-top: var(--space-m-l);
-}
-
-/* flex och space between ordnar layouten för speldata och knappen på desktop */
-.game-hud {
     display: flex;
-    justify-content: space-between;
+    justify-content: center;
+
 }
 
-.game-currency {
-    list-style: none;
-    padding: 0;
+.stats {
+
+    margin-top: 5rem;
+
+    width: 30rem;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding-right: 1rem;
+
+    font-size: x-large;
+
+
+
+    background-color: rgba(100%, 100%, 100%, 0.25);
 }
 
-/* game-currency är en lista med list items */
-.item > h3 {
-    display: flex;
-    justify-content: space-between;
-    gap: var(--space-xs-s);
+.main {
+
+    max-width: 56rem;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    padding-top: 1rem;
+
+    padding-left: 1rem;
+
+    padding-right: 1rem;
+
+    font-size: x-large;
+
+    text-align: center;
+
+    background-color: rgba(100%, 100%, 100%, 0.25);
+
 }
 
-@media (max-width: 30rem) {
-    .game-hud {
-        flex-direction: column-reverse;
-    }
-    .game-controls {
-        place-self: center;
-    }
+.upgrade {
+
+    margin-top: 5rem;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+    width: 30rem;
+
+    padding-right: 1rem;
+
+    font-size: x-large;
+
+    background-color: rgba(100%, 100%, 100%, 0.25);
 }
 
-/* för spelelementet används #id som selektor för att skapa css reglerna */
 #game-button {
-    width: var(--space-4xl-5xl);
-    height: var(--space-4xl-5xl);
+    width: 30rem;
+    height: 30rem;
     font-size: var(--step-2);
-    background: url('../img/brett-meliti-RgkYMfFopIA-unsplash-removebg-preview.png');
+    background: url('../img/butterdog-button.jpg');
     background-size: cover;
     background-position: center;
+    background-repeat: no-repeat;
     border: 2px solid transparent;
     color: var(--color-light);
-    text-transform: uppercase;
     font-weight: 700;
     cursor: pointer;
 }
 
-#game-button:hover {
-    border-color: var(--color-dark-transparent);
-}
-
-#game-button:active {
-    border-color: var(--color-dark);
-    background-color: var(--color-dark-transparent);
-}
-
-/* #msgbox är elementet som visar sidans toasts, popupmeddelanden
-* fixed fungerar liknande absolute för att positionera element på ett fast ställe
-* vi använder måttet vmin som skalas efter webbläsarens storlek
-*/
 #msgbox {
     position: fixed;
     right: 2vmin;
@@ -171,14 +119,11 @@ audio {
     min-width: 16rem;
 }
 
-#msgbox > p {
+#msgbox>p {
     margin-bottom: var(--space-xs-s);
     padding: var(--space-xs-s);
 }
 
-/* de här klasserna används för att bestämma stilen på de olika storternas
- * meddelanden. Javascript används för att lägga till stilen på meddelandet
- */
 .warning {
     background-color: palevioletred;
 }
@@ -192,10 +137,18 @@ audio {
     background-color: rebeccapurple;
 }
 
-/* dessa kort används för spelets uppgraderingar 
- * lägg märke till padding och margin för att ge elementen lite luft och 
- * skapa en mer lättläst struktur
- */
+.game-currency {
+    list-style: none;
+
+
+}
+
+li {
+
+    margin-bottom: 2rem;
+
+}
+
 .card {
     display: flex;
     justify-content: space-between;
@@ -212,27 +165,9 @@ audio {
 .card p:not(.title) {
     text-align: end;
 }
-/* klassen används på kortets titel, font-weight: 600 gör fonten fetare, en normal
- * font vikt är oftast 400
- */
-.title {
-    font-weight: 600;
-}
 
-/* animation och klass för att blinka texten */
+.upgrades {
 
-@keyframes flash {
-    0% {
-        color: var(--color-dark);
-    }
-    50% {
-        color: var(--color-dark-transparent);
-    }
-    100% {
-        color: var(--color-dark);
-    }
-}
+    margin-bottom: 2rem;
 
-.active {
-    animation: flash 1s infinite;
 }
