@@ -84,7 +84,6 @@ clickerButton.addEventListener(
         audioclick.play();
         totalclicks += 1;
         //                     <h3>Totala klick: <span id="totalclicks"></span></h3>
-        console.log(totalclicks)
     },
     false
 );
