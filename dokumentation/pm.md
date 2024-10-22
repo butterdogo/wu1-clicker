@@ -14,7 +14,8 @@ Positiva erfarenheter:
 Jag har lärt mig mer om javascript. Jag har fått lite mer kunskap om css.
 
 Negativa erfarenheter:
-Dett var väldigt svårt att få till en bakgrund med AI som skulle passa till temat men också ha kontrast till texten.
+Dett var väldigt svårt att få till en bakgrund med AI som skulle passa till temat men också ha kontrast till texten. Jag hade även svårt
+att få bilden och ljuden när jag hostat webbsidan på github. Ljudet när man klickar på bilden fungerar fortfarande inte av nångon anledning.
 
 Sammanfattning:
 Jag gjorde ett enkelt klickerspel medan jag också lärde mig mer och javascrip och html/css.
